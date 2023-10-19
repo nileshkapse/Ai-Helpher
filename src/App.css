@@ -1,16 +1,100 @@
 .App {
-  text-align: center;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+.white-theme {
+  background: white;
+  color: #000;
+}
+.dark-theme {
+  background: #454650;
+  color: white;
+}
 
+.logo-container{
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.white-theme .wrapper button{
+  border: none;
+  background: #fff;
+}
+.logo-container img{
+  padding:12px;
+ width: 180px;
+ height: 100px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+/* ChatGPT Input Container */
+.chatgpt-input-container {
+  position: relative;
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: 58%;
+  margin: 0 auto;
+}
+
+/* ChatGPT Multiline Input Field (Textarea) */
+.chatgpt-input {
+  width: 80%;
+  border: none;
+  outline: none;
+  resize: none; /* Prevent resizing of the textarea */
+  padding: 10px;
+  font-size: 16px;
+  background: transparent;
+  transition: height 0.2s; /* Add a smooth transition for the height change */
+  overflow-y: hidden; /* Hide the vertical scrollbar */
+}
+
+/* ChatGPT Submit Button */
+.chatgpt-submit-button {
+  position: absolute;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Hover effect for the ChatGPT Submit Button */
+.chatgpt-submit-button:hover {
+  background-color: #1e87cc;
+}
+
+.switch {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 50px;
 }
 
 .App-header {
@@ -34,5 +118,117 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.entries-search {
+  display: flex;
+  padding-top: 30px;
+  margin-top: 30px;
+  width: 90%;
+  align-items: center;
+  margin: auto;
+  justify-content: space-between;
+  max-height: 200px;
+  overflow-y: hidden;
+}
+
+.entries-search input {
+  color: #4c4c4c;
+  border: 0.8px solid #d5d5d5;
+  padding: 8px 12px;
+  margin-right: 14px;
+  border-radius: 4px;
+  width: 91%;
+}
+
+.entries-search button {
+  color: black;
+  background-color: #fffb08;
+  border: 0.8px solid;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+/* Apply some basic styles to the container */
+.textbox-container {
+  border: 0.8px solid #666666;
+  border-radius: 4px;
+  /* width: 300px;
+  margin: 20px; */
+}
+
+/* Style the text input field */
+.styled-textbox {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Style the placeholder text */
+.styled-textbox::placeholder {
+  color: #aaa;
+}
+
+.result-div {
+  width: 90%;
+  align-items: center;
+  margin: auto;
+}
+
+.text-field-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  --tw-text-opacity: 1;
+  background-color: #62626f;
+  color: white;
+}
+.text-field-result {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: aliceblue;
+  padding: 1rem;
+}
+
+.text-area {
+  width: 90%;
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+.typewriter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.typewriter p {
+  overflow: hidden;
+  border-right: 0.15em solid rgb(100, 100, 100); /* Cursor style */
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 8px;
+  width: 0;
+  animation: typing 4s steps(30, end) 0.5s normal forwards;
+}
+
+.typewriter p:nth-child(2) {
+  animation-delay: 5s; /* Delay the animation for the second paragraph */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
